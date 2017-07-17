@@ -1,0 +1,33 @@
+<div class="home" ng-cloak>
+    <link rel="stylesheet" type="text/css" href="./dist/routes/home/home.css" async>
+    <h3 class="header">Ubigeos: Nicol&aacute;s Sigal</h3>
+
+    <section class="ubigeos">
+        <table ng-if="home.ubigeos" class="ubigeos__table" ng-repeat="(categoryName, category) in home.ubigeos track by $index">
+            <thead>
+                <tr>
+                    <td colspan="4" class="table-title"><span>{{ ::categoryName }}</span></td>
+                </tr>
+                <tr>
+                    <td>C&oacute;digo</td>
+                    <td>Nombre</td>
+                    <td>C&oacute;digo Padre</td>
+                    <td>Descripci&oacute;n Padre</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="ubigeo in category">
+                    <td><span>{{ ::ubigeo.code }}</span></td>
+                    <td><span>{{ ::ubigeo.name }}</span></td>
+                    <td><span>{{ ::ubigeo.parentCode }}</span></td>
+                    <td><span>{{ ::ubigeo.parentName }}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+    <section class="ubigeos__errors" ng-if="home.ubigeos_errors">
+        <ul>
+            <li ng-repeat="error in home.ubigeos_errors"><span> {{::error.msg}} </span></li>
+        </ul>
+    </section>
+</div>

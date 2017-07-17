@@ -1,0 +1,53 @@
+@import './../../styles/modules/main';
+.home {
+    .header {
+        margin: 2% 5%;
+        color: $blue-gray;
+    }
+    .ubigeos {
+        &__errors {
+            ul {
+                margin:0;
+                padding:0;
+                li {
+                    list-style: none;
+                    margin: 2% 5%;
+                    color: red;
+                    font-size:$error-font-size;
+                }
+            }
+        }
+        &__table {
+            font-size: $font-size;
+            text-align: center;
+            border: 0;
+            margin: 2% 5%;
+            border-collapse: collapse;
+            min-width: 90%;
+            border: 1px solid lightgray;
+            thead,
+            tbody {
+                tr {
+                    td {
+                        border: 1px solid $dark-gray;
+                        padding: 15px;
+                        text-align: left;
+                        &.table-title {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+            thead {
+                background: $blue-gray;
+                color: $snow;
+                font-weight: 600;
+            }
+            tbody {
+                tr:nth-child(even) {
+                    background: lighten($blue-gray, 40%);
+                }
+            }
+        }
+    }
+}
